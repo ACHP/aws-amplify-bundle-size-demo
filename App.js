@@ -8,6 +8,14 @@
 
 import React from 'react';
 import type {Node} from 'react';
+import {Amplify} from '@aws-amplify/core';
+import {Analytics} from '@aws-amplify/analytics';
+
+function neverExecuted() {
+  Amplify.configure({});
+  Analytics.record({});
+}
+
 import {
   SafeAreaView,
   ScrollView,
@@ -27,6 +35,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 const Section = ({children, title}): Node => {
+  neverExecuted();
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
